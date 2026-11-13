@@ -12,7 +12,7 @@ test_that("plotSPC builds a p-chart for filtered indicator data", {
     stringsAsFactors = FALSE
   )
 
-  plot <- rapRegTemplate:::plotSPC(
+  plot <- ect:::plotSPC(
     data,
     title = "Indicator title",
     subtitle = "Indicator description"
@@ -33,7 +33,7 @@ test_that("plotSPC uses default title when title and subtitle are not provided",
     stringsAsFactors = FALSE
   )
 
-  plot <- rapRegTemplate:::plotSPC(data)
+  plot <- ect:::plotSPC(data)
 
   expect_s3_class(plot, "ggplot")
   expect_equal(plot$labels$title, "SPC-diagram")
@@ -48,7 +48,7 @@ test_that("plotSPC fails when required columns are missing", {
   )
 
   expect_error(
-    rapRegTemplate:::plotSPC(data),
+    ect:::plotSPC(data),
     "requires columns: year, unitName, var, denominator, ind_id\\. Missing: denominator, ind_id"
   )
 })
@@ -64,7 +64,7 @@ test_that("plotSPC fails when filters remove all observations", {
   )
 
   expect_error(
-    rapRegTemplate:::plotSPC(data),
+    ect:::plotSPC(data),
     "no observations after filtering"
   )
 })

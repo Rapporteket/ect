@@ -1,6 +1,6 @@
-#' Common report processor for rapRegTemplate
+#' Common report processor for ect
 #'
-#' Makes reports for rapRegTemplate typically used for auto reports such as
+#' Makes reports for ect typically used for auto reports such as
 #' subscriptions, dispatchments and bulletins.
 #'
 #' @param report The type of report to generate. Currently only "local_monthly" is supported.
@@ -26,7 +26,7 @@ reportProcessor <- function(report,
 
   if (report == "local_monthly") {
     filename <- rapbase::renderRmd(
-      system.file("samlerapport.Rmd", package = "rapRegTemplate"),
+      system.file("samlerapport.Rmd", package = "ect"),
       outputType = outputType,
       params = list(type = type,
                     var = var,

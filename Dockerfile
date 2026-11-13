@@ -6,7 +6,7 @@ RUN --mount=type=secret,id=github_pat,env=GITHUB_PAT \
     --mount=type=bind,source=.,target=/app/R/pkg \
     installr -d RSQLite && \
     R -e "remotes::install_local(path = './pkg')" \
-    R -e "library(rapRegTemplate)"
+    R -e "library(ect)"
 
 EXPOSE 3838
 
@@ -17,4 +17,4 @@ RUN adduser --uid 1000 --disabled-password rapporteket && \
 
 USER 1000:1000
 
-CMD ["R", "-e", "options(shiny.port = 3838,shiny.host = \"0.0.0.0\"); rapRegTemplate::run_app()"]
+CMD ["R", "-e", "options(shiny.port = 3838,shiny.host = \"0.0.0.0\"); ect::run_app()"]

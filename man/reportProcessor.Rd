@@ -2,7 +2,7 @@
 % Please edit documentation in R/reportProcessor.R
 \name{reportProcessor}
 \alias{reportProcessor}
-\title{Common report processor for rapRegTemplate}
+\title{Common report processor for ect}
 \usage{
 reportProcessor(report, outputType = "pdf", var = "mpg", bins = 10)
 }
@@ -19,6 +19,6 @@ reportProcessor(report, outputType = "pdf", var = "mpg", bins = 10)
 A character string with a path to where the produced file is located.
 }
 \description{
-Makes reports for rapRegTemplate typically used for auto reports such as
+Makes reports for ect typically used for auto reports such as
 subscriptions, dispatchments and bulletins.
 }

@@ -1,4 +1,4 @@
-#' Server logic for the rapRegTemplate app
+#' Server logic for the ect app
 #'
 #' @param input shiny input object
 #' @param output shiny output object
@@ -23,7 +23,7 @@ app_server <- function(input, output, session) {
     "navbar-widget",
     orgName = "pilot",
     map_orgname = map_orgname,
-    caller = "rapRegTemplate"
+    caller = "ect"
   )
 
   data_licorice_gargle <- licorice_gargle
@@ -44,7 +44,7 @@ app_server <- function(input, output, session) {
 
   rapbase::autoReportServer(
     id = "subscription",
-    registryName = "rapRegTemplate",
+    registryName = "ect",
     type = "subscription",
     paramNames = subParamNames,
     paramValues = subParamValues,
@@ -135,7 +135,7 @@ app_server <- function(input, output, session) {
 
   rapbase::autoReportServer(
     id = "dispatchment",
-    registryName = "rapRegTemplate",
+    registryName = "ect",
     type = "dispatchment",
     org = org$value,
     paramNames = disParamNames,

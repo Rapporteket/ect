@@ -67,7 +67,7 @@ samlerapport_server <- function(id) {
       ## last ned
       output$downloadSamlerapport <- shiny::downloadHandler(
         filename = function() {
-          basename(tempfile(pattern = "rapRegTemplateSamlerapport",
+          basename(tempfile(pattern = "ectSamlerapport",
                             fileext = paste0(".", input$formatS)))
         },
         content = function(file) {

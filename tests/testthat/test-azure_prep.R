@@ -29,7 +29,7 @@ test_that("define_azure_env sets the expected SQLite configuration", {
     Sys.unsetenv(name)
   }
 
-  rapRegTemplate:::define_azure_env()
+  ect:::define_azure_env()
 
   expect_equal(Sys.getenv("DB_TYPE"), "sqlite")
   expect_equal(Sys.getenv("FALK_APP_ID"), "80")
@@ -81,7 +81,7 @@ test_that("create_sqlite_db creates SQLite files and required tables", {
     unlink(tmp_dir, recursive = TRUE, force = TRUE)
   }, add = TRUE)
 
-  rapRegTemplate:::create_sqlite_db()
+  ect:::create_sqlite_db()
 
   expect_true(file.exists(autoreport_path))
   expect_true(file.exists(log_path))
@@ -163,7 +163,7 @@ test_that("azure_prep creates the environment and SQLite database files", {
     unlink(tmp_dir, recursive = TRUE, force = TRUE)
   }, add = TRUE, after = TRUE)
 
-  rapRegTemplate:::azure_prep()
+  ect:::azure_prep()
 
   expect_equal(Sys.getenv("DB_TYPE"), "sqlite")
   expect_equal(Sys.getenv("MYSQL_DB_AUTOREPORT"), "db_autoreport")
